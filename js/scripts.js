@@ -25,3 +25,16 @@ var romanNumGen = function(number) {
    }
    return romanized;
 }
+
+$(document).ready(function() {
+  $("form#roman").submit(function(event) {
+    var number = parseInt($("input#number").val());
+    var result = romanNumGen(number);
+
+    $(".roman-num").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+
+});
